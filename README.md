@@ -28,7 +28,7 @@ boneco seja enforcado por atingir um numero maximo de tentativas.
 3. Ultilize o comando abaixo para restaurar as dependencias do projeto.
 
 ```
-doenet restore
+dotnet restore
 ```
 
 4. Para Compilar o projeto ultilize o comando:
@@ -40,7 +40,7 @@ dotnet build --Configuration Release
 5. Para execultar o projeto compilando em tempo real
 
 ```
-doenet run --project JogoDaFoca.ConsoleApp
+dotnet run --project JogoDaFoca.ConsoleApp
 ```
 
 6. Para execultar o arquivo compliado .exe, navegue até a pasta 
