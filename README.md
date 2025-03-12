@@ -1,7 +1,6 @@
 # JOGO DA FORCA.
 O jogo da forca é um jogo em que os jogadores devem adivinhar uma palavra, escolhendo letras, e evitando que o
 boneco seja enforcado por atingir um numero maximo de tentativas.
-Nesta versão, o usuario terá 5 tentativas para adivinhar as letras que forma a palavra secreta.
 
 ## Funcionalidades
 	
@@ -11,7 +10,7 @@ Nesta versão, o usuario terá 5 tentativas para adivinhar as letras que forma a
 
 - **A cada erro, as partes do boneco são desenhadas na tela.**
 
-- **O boneco será completado ao atingir o numero maximo de tentativas(5) resultando em "perdeu".**
+- **O boneco será completado ao ultrapassar o numero maximo de tentativas(5) resultando em "perdeu".**
 
 - **O Jogo apresentará uma contagem da quantidade de erros do jogador**
 	
