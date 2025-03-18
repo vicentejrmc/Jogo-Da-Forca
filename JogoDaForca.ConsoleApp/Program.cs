@@ -79,25 +79,12 @@
                     if (letrasFoiEncontradas == false)
                         quantidadeDeErros++;
 
-
                     string palavraEncontradaCompleta = String.Join("", letrasEncontradas);
 
                     jogadorGanhou = palavraEscolhida == palavraEncontradaCompleta;
                     jogadorPerdeu = quantidadeDeErros > 5;
 
-                    if (jogadorGanhou)
-                    {
-                        Console.WriteLine("---------------------------------------------");
-                        Console.WriteLine($"Você acertou a palavra {palavraEscolhida}");
-                        Console.WriteLine("---------------------------------------------");
-                    }
-                    else if (jogadorPerdeu)
-                    {
-                        Console.WriteLine("---------------------------------------------");
-                        Console.WriteLine($"Que pena, você perdeu!");
-                        Console.WriteLine("---------------------------------------------");
-                    }
-
+                    string resultado = Jogo.Resultado(jogadorGanhou, jogadorPerdeu, palavraEscolhida);
 
                 } while (jogadorGanhou == false && jogadorPerdeu == false);
 

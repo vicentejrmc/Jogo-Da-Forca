@@ -2,6 +2,7 @@
 {
     public static class Jogo
     {
+
         public static string LogicaDoJogo(string palavraEscolhida, char chute, char[] letrasEncontradas, bool letraFoiEncontrada)
         {
            string letraEncontrada = "";
@@ -52,5 +53,23 @@
 
             return desenho;
         }
+
+        public static string Resultado(bool jogadorGanhou, bool jogadorPerdeu, string palavraEscolhida)
+        {
+            if (jogadorGanhou)
+            {
+                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine($"Você acertou a palavra {palavraEscolhida}");
+                Console.WriteLine("---------------------------------------------");
+            }
+            else if (jogadorPerdeu)
+            {
+                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine($"Que pena, você perdeu!");
+                Console.WriteLine("---------------------------------------------");
+            }
+            return palavraEscolhida;
+        }
+
     }
 }
