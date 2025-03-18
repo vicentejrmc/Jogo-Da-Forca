@@ -58,35 +58,8 @@
                 bool jogadorPerdeu = false;
 
                 do
-                {
-                    // operador ternario
-                    // atribui valor a uma variavel dada uma condição.
-                    string cabecaDodesenho = quantidadeDeErros >= 1 ? " o " : " ";
-                    string trondoDoDesenho = quantidadeDeErros >= 2 ? "x" : " ";
-                    string trondoInferior = quantidadeDeErros >= 3 ? " x " : " ";
-                    string bracoEsquerdo = quantidadeDeErros >= 4 ? "/" : " ";
-                    string bracodireito = quantidadeDeErros >= 5 ? "\\" : " ";
-                    string pernasDoDesenho = quantidadeDeErros >= 5 ? "/ \\" : " ";
-
-                    Console.Clear();
-                    Console.WriteLine("---------------------------------------------");
-                    Console.WriteLine("--------------- Jogo da Forca ---------------");
-                    Console.WriteLine("---------------------------------------------");
-                    Console.WriteLine();
-                    Console.WriteLine(" ___________        ");
-                    Console.WriteLine(" |/        |        ");
-                    Console.WriteLine(" |        {0}       ", cabecaDodesenho);
-                    Console.WriteLine(" |        {0}{1}{2} ", bracoEsquerdo, trondoDoDesenho, bracodireito);
-                    Console.WriteLine(" |        {0}       ", trondoInferior);
-                    Console.WriteLine(" |        {0}       ", pernasDoDesenho);
-                    Console.WriteLine(" |                  ");
-                    Console.WriteLine(" |                  ");
-                    Console.WriteLine("_|____              ");
-                    Console.WriteLine();
-                    Console.WriteLine("Erros do jogador: " + quantidadeDeErros);
-                    Console.WriteLine("---------------------------------------------");
-                    Console.WriteLine("Palavra Secreta: " + String.Join("", letrasEncontradas));
-                    Console.WriteLine("---------------------------------------------");
+                {             
+                    string desenhoDoFoca = Jogo.ExibirDesenho(quantidadeDeErros, letrasEncontradas);
 
                     Console.Write("Digite uma letra válida: ");
                     string entradaInicial = Console.ReadLine()!.ToUpper();
@@ -101,16 +74,7 @@
 
                     bool letrasFoiEncontradas = false;
 
-                    for (int contCaracter = 0; contCaracter < palavraEscolhida.Length; contCaracter++)
-                    {
-                        char caracterAtual = palavraEscolhida[contCaracter];
-
-                        if (chute == caracterAtual)
-                        {
-                            letrasEncontradas[contCaracter] = caracterAtual;
-                            letrasFoiEncontradas = true;
-                        }
-                    }
+                    string letra = Jogo.LogicaDoJogo(palavraEscolhida, chute, letrasEncontradas, letrasFoiEncontradas);
 
                     if (letrasFoiEncontradas == false)
                         quantidadeDeErros++;
@@ -136,8 +100,6 @@
 
 
                 } while (jogadorGanhou == false && jogadorPerdeu == false);
-
-
 
                 Console.Write("Deseja Jogar novamente? S/N ");
                 string jogarNovamenteString = Console.ReadLine().ToUpper();
