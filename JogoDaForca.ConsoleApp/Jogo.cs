@@ -3,9 +3,9 @@
     public static class Jogo
     {
 
-        public static string LogicaDoJogo(string palavraEscolhida, char chute, char[] letrasEncontradas, bool letraFoiEncontrada)
+        public static bool LogicaDoJogo(string palavraEscolhida, char chute, char[] letrasEncontradas)
         {
-           string letraEncontrada = "";
+            bool letraFoiEncontrada = false;
 
             for (int contCaracter = 0; contCaracter < palavraEscolhida.Length; contCaracter++)
             {
@@ -17,7 +17,8 @@
                     letraFoiEncontrada = true;
                 }
             }
-            return letraEncontrada;
+
+            return letraFoiEncontrada;
         }
 
         public static string ExibirDesenho( int quantidadeDeErros, char[] letrasEncontradas)

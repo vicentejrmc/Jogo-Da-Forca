@@ -72,11 +72,9 @@
                     // LOGICA DO JOGO.
                     char chute = entradaInicial[0];
 
-                    bool letrasFoiEncontradas = false;
+                    bool letraFoiEncontrada = Jogo.LogicaDoJogo(palavraEscolhida, chute, letrasEncontradas); 
 
-                    string letra = Jogo.LogicaDoJogo(palavraEscolhida, chute, letrasEncontradas, letrasFoiEncontradas);
-
-                    if (letrasFoiEncontradas == false)
+                    if (letraFoiEncontrada == false)
                         quantidadeDeErros++;
 
                     string palavraEncontradaCompleta = String.Join("", letrasEncontradas);
@@ -94,9 +92,6 @@
                 if (jogarNovamenteChar != 'S')
                     jogarNovamente = false;
             }
-
-
-          
 
         }
     }
